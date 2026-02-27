@@ -201,7 +201,7 @@ export default function Home() {
                   </div>
                   
                   <div className="relative z-0">
-                    <PayPalScriptProvider options={{ "client-id": "test" }}>
+                    <PayPalScriptProvider options={{ clientId: "test" }}>
                       <PayPalButtons 
                         style={{ layout: "vertical", color: "black", shape: "rect", label: "checkout" }}
                         createOrder={(data, actions) => {
