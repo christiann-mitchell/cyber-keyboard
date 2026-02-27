@@ -207,8 +207,12 @@ export default function Home() {
                         createOrder={(data, actions) => {
                           return actions.order.create({
                             intent: "CAPTURE",
-                            purchase_units: [{ amount: { value: "189.00" } }],
-                          });
+                            purchase_units: [{ 
+                              amount: { 
+                                currency_code: "USD", // This is the missing piece
+                                value: "189.00" 
+                              } 
+                            }],                          });
                         }}
                         onApprove={(data, actions) => {
                           return actions.order!.capture().then((details) => {
