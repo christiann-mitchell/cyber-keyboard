@@ -1,26 +1,43 @@
 @import "tailwindcss";
 
+@theme {
+  --color-charcoal: #121212;
+  --color-zingy: #CCFF00;
+}
+
 :root {
   --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --foreground: #111111;
 }
 
 body {
-  background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--background);
+  font-family: sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom Minimalist Components using standard CSS because Tailwind 4 is strict */
+.btn-premium {
+  background-color: var(--color-charcoal);
+  color: white;
+  padding: 1rem 2rem;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-size: 0.75rem;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-premium:hover {
+  background-color: black;
+  box-shadow: 0 10px 20px -10px rgba(0,0,0,0.5);
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
